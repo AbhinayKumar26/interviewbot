@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const API =
-  "http://localhost:5000/api";
-
+  "https://interviewbot-vj9w.onrender.com/api";
 // ================= REGISTER =================
 export const registerUser =
   async (userData) => {
@@ -72,7 +71,7 @@ export const getHistory =
       );
 
     const res = await axios.get(
-      "http://localhost:5000/api/interview/history",
+  `${API}/interview/history`,
       {
         headers: {
           Authorization: token,
@@ -94,7 +93,7 @@ export const getHistory =
   async (resumeText) => {
 
     const res = await axios.post(
-      "http://localhost:5000/api/ai/analyze",
+      `${API}/ai/analyze`,
       {
         resumeText,
       }
@@ -110,7 +109,7 @@ export const getHistory =
   ) => {
 
     const res = await axios.post(
-      "http://localhost:5000/api/resume/upload",
+      `${API}/resume/upload`,
       formData,
       {
         headers: {
