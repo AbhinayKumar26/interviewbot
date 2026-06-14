@@ -1,12 +1,7 @@
-
-
-
-
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-
 import authRoutes from "./routes/authRoutes.js";
 import interviewRoutes from "./routes/interviewRoutes.js";
 import aiRoutes from "./routes/aiRoutes.js";
@@ -15,6 +10,10 @@ import resumeRoutes from "./routes/resumeRoutes.js";
 dotenv.config();
 
 const app = express();
+
+app.get("/", (req, res) => {
+  res.send("InterviewBot Backend Running Successfully 🚀");
+});
 
 // ================= MIDDLEWARE =================
 app.use(
