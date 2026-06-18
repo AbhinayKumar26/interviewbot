@@ -18,7 +18,10 @@ app.get("/", (req, res) => {
 // ================= MIDDLEWARE =================
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://interviewbot-frontend-zlpc.onrender.com"
+    ],
     credentials: true,
   })
 );
